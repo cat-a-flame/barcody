@@ -17,6 +17,8 @@ export default function Page() {
         font: "Quicksand",
         fontOptions: "bold",
         textAlign: "center",
+        width: 4,
+        height: 200,
       });
 
       // Convert canvas to image (PNG or JPG)
