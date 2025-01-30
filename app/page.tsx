@@ -20,7 +20,7 @@ export default function Page() {
       });
 
       // Convert canvas to image (PNG or JPG)
-      const imageUrl = canvas.toDataURL("image/png", 1); // Change to "image/png" for PNG
+      const imageUrl = canvas.toDataURL("image/png", 1);
       setImageSrc(imageUrl); // Set the generated image source
     }
   };
@@ -32,24 +32,23 @@ export default function Page() {
 
   const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key === 'Enter') {
-      generateBarcode(); // Generate the barcode when Enter is pressed
+      generateBarcode();
     }
   };
 
   return (
-    <div style={{ textAlign: 'center', marginTop: '50px' }}>
+    <main>
       <h1>Barcode Generator</h1>
       <input
         type="text"
-        placeholder="Enter text"
+        placeholder="Enter SKU or barcode text"
         value={text}
         onChange={handleInputChange}
-        onKeyDown={handleKeyDown} // Add keydown event listener
-        style={{ padding: '10px', fontSize: '16px' }}
+        onKeyDown={handleKeyDown}
       />
-      <div style={{ marginTop: '20px' }}>
-        {imageSrc && <img src={imageSrc} alt="Generated Barcode" style={{ maxWidth: '100%' }} />}
+      <div>
+        {imageSrc && <img src={imageSrc} alt="Generated Barcode" />}
       </div>
-    </div>
+    </main>
   );
 }
